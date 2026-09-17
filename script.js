@@ -1,1 +1,0 @@
-console.log("Motor M Power da BMW ativo!");

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+      <script src="tailwind.js"></script>
     <title>showroom-3d</title>
 </head>
 <body class="bg-zinc-950 text-white">
@@ -24,15 +25,22 @@
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500 uppercase">
             O PURO PRAZER DE DIRIGIR.
         </h1>
-        
-        <!--O Palco do Carro 3D (Com efeito pulsar de carregamento) -->
-        <div id="canvas-3d" class="w-full h-[50vh] md:h-[60vh] bg-zinc-900/30 rounded-3xl border border-zinc-900 flex items-center justify-center animate-pulse">
-            <!-- Um texto discreto indicando que o motor WebGL vai rodar aqui -->
-            <span class="text-xs text-zinc-600 font-mono tracking-widest uppercase">M Engine 3D Active</span>
+               <!-- O Palco do Carro 3D Corrigido -->
+        <div id="canvas-3d" class="w-full h-[50vh] md:h-[60vh] bg-zinc-900/10 rounded-3xl border border-zinc-900 overflow-hidden relative shadow-2xl shadow-emerald-500/5">
+            <!-- Usando o componente oficial do Spline Viewer -->
+            <spline-viewer url="https://spline.design"></spline-viewer>
         </div>
 
-    </div>
+    </div> <!-- Fechamento da Grid Pai -->
 
+        <script type="module" src="https://unpkg.com"></script
+</html>
+
+
+    <!--Importação Oficial do Spline via jsDelivr -->
+    <script type="module" src="https://jsdelivr.net"></script>
+
+    <!-- Conecta o arquivo de lógica -->
     <script src="script.js"></script>
 </body>
 </html>
