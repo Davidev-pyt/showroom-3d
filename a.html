@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador 3D BMW</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .sketchfab-embed-wrapper {
+            width: 80vw;
+            height: 60vh;
+            max-width: 900px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sketchfab-embed-wrapper">
+        <iframe title="BMW M3 Competition G80" 
+            src="https://sketchfab.com" 
+            allow="autoplay; fullscreen; xr-spatial-tracking" 
+            xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share>
+        </iframe>
+    </div>
+
+</body>
+</html>

@@ -4,43 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-      <script src="tailwind.js"></script>
-    <title>showroom-3d</title>
+    <title>BMW M Sport - Showroom Premium</title>
 </head>
-<body class="bg-zinc-950 text-white">
 
+<body class="bg-zinc-950 text-white min-h-screen flex flex-col justify-between">
+
+    <!-- NAVBAR PREMIUM DA BMW M SPORT -->
     <nav class="w-full py-6 px-8 flex justify-between items-center border-b border-zinc-900">
         <span class="text-xl font-black tracking-tighter uppercase">BMW M</span>
         <div class="flex gap-6">
-            <a class="flex text-sm font-medium text-zinc-400 hover:text-white transition-colors">Modelos</a>
-            <a class="flex text-sm font-medium text-zinc-400 hover:text-white transition-colors">Showroom 3D</a>
-            <a class="flex text-sm font-medium text-zinc-400 hover:text-white transition-colors">Configurador</a>
+            <a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer">Modelos</a>
+            <a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer">Showroom</a>
+            <a class="text-sm font-medium text-zinc-400 hover:text-white transition-colors cursor-pointer">Configurador</a>
         </div>
-
     </nav>
-    <!--GRANDE CAIXA PRINCIPAL DO SHOWROOM (Grid Pai) -->
-    <div class="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[70vh]">
+
+    <!-- GRANDE CAIXA PRINCIPAL DO SHOWROOM (Grid Pai) -->
+    <div class="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[70vh] w-full">
         
-        <!--O Slogan com Degradê Metálico -->
+        <!-- Coluna 1: O Slogan com Degradê Metálico -->
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-zinc-500 uppercase">
             O PURO PRAZER DE DIRIGIR.
         </h1>
-               <!-- O Palco do Carro 3D Corrigido -->
-        <div id="canvas-3d" class="w-full h-[50vh] md:h-[60vh] bg-zinc-900/10 rounded-3xl border border-zinc-900 overflow-hidden relative shadow-2xl shadow-emerald-500/5">
-            <!-- Usando o componente oficial do Spline Viewer -->
-            <spline-viewer url="https://spline.design"></spline-viewer>
+        
+        <!-- Coluna 2: A Vitrine de Luxo da BMW (Com os Botões de Customização) -->
+        <div class="flex flex-col gap-6 items-center w-full">
+            
+            <!-- 📷 CAIXA DA IMAGEM: Agora contém APENAS a imagem do carro! -->
+            <div id="canvas-3d" class="w-full h-[40vh] md:h-[50vh] bg-zinc-900/10 rounded-3xl border border-zinc-900 overflow-hidden relative shadow-2xl shadow-emerald-500/5 flex items-center justify-center p-4">
+                <img id="bmw-imagem" src="carro-azul.png" 
+                     alt="BMW M Sport" class="w-full h-auto max-h-[30vh] md:max-h-[40vh] object-contain transition-all duration-500 transform hover:scale-105">
+            </div>
+
+            <!-- 🎨 PAINEL DE CORES SOLTO: Posicionado perfeitamente ABAIXO da caixa do carro! -->
+            <div class="flex gap-4 bg-zinc-900/40 px-6 py-3 rounded-full border border-zinc-900 shadow-lg z-10">
+                <!-- Botão Azul -->
+                <button id="btn-azul" class="w-6 h-6 rounded-full bg-blue-600 border border-white/20 hover:scale-125 hover:border-white transition-all cursor-pointer"></button>
+                <!-- Botão Preto -->
+                <button id="btn-preto" class="w-6 h-6 rounded-full bg-zinc-900 border border-white/20 hover:scale-125 hover:border-white transition-all cursor-pointer"></button>
+                <!-- Botão Branco -->
+                <button id="btn-branco" class="w-6 h-6 rounded-full bg-slate-50 border border-white/20 hover:scale-125 hover:border-white transition-all cursor-pointer"></button>
+            </div>
+
         </div>
+    </div>
 
-    </div> <!-- Fechamento da Grid Pai -->
-
-        <script type="module" src="https://unpkg.com"></script
-</html>
-
-
-    <!--Importação Oficial do Spline via jsDelivr -->
-    <script type="module" src="https://jsdelivr.net"></script>
-
-    <!-- Conecta o arquivo de lógica -->
+    <!-- Conecta o arquivo de lógica local -->
     <script src="script.js"></script>
 </body>
 </html>
