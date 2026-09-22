@@ -30,13 +30,21 @@
         <!-- Coluna 2: A Vitrine de Luxo da BMW (Com os Botões de Customização) -->
         <div class="flex flex-col gap-6 items-center w-full">
             
-            <!-- 📷 CAIXA DA IMAGEM: Agora contém APENAS a imagem do carro! -->
+            <!-- CAIXA DA IMAGEM: Contém o pre-load das três imagens validadas! -->
             <div id="canvas-3d" class="w-full h-[40vh] md:h-[50vh] bg-zinc-900/10 rounded-3xl border border-zinc-900 overflow-hidden relative shadow-2xl shadow-emerald-500/5 flex items-center justify-center p-4">
-                <img id="bmw-imagem" src="carro-azul.png" 
-                     alt="BMW M Sport" class="w-full h-auto max-h-[30vh] md:max-h-[40vh] object-contain transition-all duration-500 transform hover:scale-105">
-            </div>
+                
+                <!-- Imagem Azul (Nasce Visível) -->
+                <img id="bmw-azul" src="carro-azul.png" alt="BMW Azul" class="w-full h-auto max-h-[30vh] md:max-h-[40vh] object-contain transition-all duration-500 transform hover:scale-105">
 
-            <!-- 🎨 PAINEL DE CORES SOLTO: Posicionado perfeitamente ABAIXO da caixa do carro! -->
+                <!-- Imagem Preta (Escondida com 'hidden') -->
+                <img id="bmw-preto" src="carro-preto.png" alt="BMW Preta" class="w-full h-auto max-h-[30vh] md:max-h-[40vh] object-contain transition-all duration-500 transform hover:scale-105 hidden">
+
+                <!-- Imagem Branca (Escondida com 'hidden') -->
+                <img id="bmw-branco" src="carro-branco.png" alt="BMW Branca" class="w-full h-auto max-h-[30vh] md:max-h-[40vh] object-contain transition-all duration-500 transform hover:scale-105 hidden">
+
+            </div> <!-- Fecha a caixa das imagens (canvas-3d) -->
+
+            <!-- PAINEL DE CORES SOLTO: Posicionado perfeitamente ABAIXO da caixa do carro! -->
             <div class="flex gap-4 bg-zinc-900/40 px-6 py-3 rounded-full border border-zinc-900 shadow-lg z-10">
                 <!-- Botão Azul -->
                 <button id="btn-azul" class="w-6 h-6 rounded-full bg-blue-600 border border-white/20 hover:scale-125 hover:border-white transition-all cursor-pointer"></button>
@@ -46,8 +54,8 @@
                 <button id="btn-branco" class="w-6 h-6 rounded-full bg-slate-50 border border-white/20 hover:scale-125 hover:border-white transition-all cursor-pointer"></button>
             </div>
 
-        </div>
-    </div>
+        </div> <!-- Fecha a Coluna 2 -->
+    </div> <!-- Fecha o Grid Pai -->
 
     <!-- Conecta o arquivo de lógica local -->
     <script src="script.js"></script>

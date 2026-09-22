@@ -1,27 +1,35 @@
-// 1. CAPTURA OS ELEMENTOS DA VITRINE
-const elemento_imagem = document.getElementById('bmw-imagem');
-const botao_azul = document.getElementById('btn-azul');
-const botao_preto = document.getElementById('btn-preto');
-const botao_branco = document.getElementById('btn-branco');
+// 1. CAPTURA OS BOTÕES DO HTML
+const btnAzul = document.getElementById('btn-azul');
+const btnPreto = document.getElementById('btn-preto');
+const btnBranco = document.getElementById('btn-branco');
 
-//ARQUIVOS LOCAIS OFFLINE!
-const foto_azul = "carro-azul.png";
-const foto_preta = "carro-preto.png";
-const foto_branca = "carro-branco.png";
+// 2. CAPTURA AS TRÊS IMAGENS VALIDADAS DO HTML
+const imgAzul = document.getElementById('bmw-azul');
+const imgPreto = document.getElementById('bmw-preto');
+const imgBranco = document.getElementById('bmw-branco');
 
-// 2. EVENTOS DE CLIQUE PARA TROCA DE COR INSTANTÂNEA
-botao_azul.addEventListener('click', function() {
-    elemento_imagem.src = foto_azul;
-    console.log("Lataria atualizada: Azul M Sport.");
+// 3. FUNÇÃO AUXILIAR PARA ESCONDER TODAS AS IMAGENS PRIMEIRO
+function esconderTodas() {
+    imgAzul.classList.add('hidden');
+    imgPreto.classList.add('hidden');
+    imgBranco.classList.add('hidden');
+}
+
+// 4. EVENTOS DE CLIQUE MUDANDO A VISIBILIDADE EM TEMPO REAL
+btnAzul.addEventListener('click', function() {
+    esconderTodas();
+    imgAzul.classList.remove('hidden'); // Mostra o azul!
+    console.log("Visibilidade atualizada: Exibindo carro-azul.png");
 });
 
-botao_preto.addEventListener('click', function() {
-    elemento_imagem.src = foto_preta;
-    console.log("Lataria atualizada: Preto Sapphire.");
+btnPreto.addEventListener('click', function() {
+    esconderTodas();
+    imgPreto.classList.remove('hidden'); // Mostra o preto!
+    console.log("Visibilidade atualizada: Exibindo carro-preto.png");
 });
 
-// Certifique-se de que a função fecha corretamente com as chaves!
-botao_branco.addEventListener('click', function() {
-    elemento_imagem.src = foto_branca;
-    console.log("Lataria updated: Branco Alpine.");
+btnBranco.addEventListener('click', function() {
+    esconderTodas();
+    imgBranco.classList.remove('hidden'); // Mostra o branco!
+    console.log("Visibilidade atualizada: Exibindo carro-branco.png");
 });
